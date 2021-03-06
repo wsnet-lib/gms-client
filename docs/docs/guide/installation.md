@@ -1,0 +1,36 @@
+---
+id: installation
+title: Installation
+sidebar_label: Installation
+---
+
+### Install the client
+
+1. Download the extension from https://github.com/gamemaker-websocket/client and unzip it.
+
+2. Run Game Maker Studio and import the file _client.yympz_ (by dragging the file on the editor and importing all resources)
+
+<img src="../../static/img/gws-import-extension.png"  width="500" height="auto" />
+
+3. There you go, the game will now be able to connect to your multiplayer server on your machine. If you want to test the connection, please proceed with the server installation.
+
+---
+
+### Install the server
+
+1. Download the server from https://github.com/gamemaker-websocket/server and unzip it.
+
+2. Install Node.js from https://nodejs.org/en
+
+3. In the server folder, open a terminal window (eg. PowerShell) and run:
+
+```bash
+$ npm install
+$ npm run watch
+```
+
+This will install the dependencies and run the server on your local machine. If everything went smoothly, you will see:
+
+![GWS Server Installation](../../static/img/gws-server-installation.png)
+
+4. You are now ready to test the game connection from GameMaker Studio
