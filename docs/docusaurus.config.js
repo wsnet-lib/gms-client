@@ -37,7 +37,7 @@ module.exports = {
 
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/gamemaker-websocket/client/edit/master',
+            'https://github.com/gamemaker-websocket/client/edit/master/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

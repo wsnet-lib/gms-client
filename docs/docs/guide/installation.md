@@ -8,9 +8,9 @@ sidebar_label: Installation
 
 1. Download the extension from https://github.com/gamemaker-websocket/client and unzip it.
 
-2. Run Game Maker Studio and import the file _client.yympz_ (by dragging the file on the editor and importing all resources)
+2. Run Game Maker Studio and import the file _gws_2_3.yymps_ (by dragging the file on the editor and importing all resources)
 
-<img src="../../static/img/gws-import-extension.png"  width="500" height="auto" />
+![GWS Import Extension](../../static/img/gws-import-extension.png)
 
 3. There you go, the game will now be able to connect to your multiplayer server on your machine. If you want to test the connection, please proceed with the server installation.
 

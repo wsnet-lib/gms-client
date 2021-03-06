@@ -4,7 +4,7 @@ title: Deploy
 sidebar_label: Deploy
 ---
 
-To let players to connect with each other, the GWS server have to be hosted on a cloud machine. This tutorial will guide on deploying the server on the service [Heroku](https://heroku.com), which offers a free plan to get started.
+To let players connect with each other, the GWS server have to be hosted on a cloud machine. This tutorial will guide on deploying the server on the service [Heroku](https://heroku.com), which offers a free plan to get started.
 
 Other solutions are also available, e.g. AWS, Google Cloud, Digital Ocean, self hosting, etc.. 
 
@@ -18,18 +18,18 @@ Other solutions are also available, e.g. AWS, Google Cloud, Digital Ocean, self 
 
 3. Type your app name and select a region, then click the button _Create app_.
 
-<img src="../../../static/img/heroku-app-name.png" width="180" height="auto" />
+![Heroku App Name](../../../static/img/heroku-app-name.png)
 
 4. Go to the _Deploy_ tab and follow the procedure to upload the server code with the Heroku CLI and Git. If you haven't got _Git_ already, please install it first from this [link](https://git-scm.com/downloads).
 
-<img src="../../../static/img/heroku-deploy.png" width="200" height="auto" />
+![Heroku Deploy](../../../static/img/heroku-deploy.png)
 
-5. If everything went smoothly, your server will now be running on the address `<your-app-name>.herokuapp.com`, which will be the address to connect from within the game (instead of `http://localhost:8080`). 
+5. If everything went smoothly, your server will now be running on the address `<your-app-name>.herokuapp.com:80`, which will be the address to connect from within the game (instead of `localhost:8080`). 
 
 ---
 
 Note: to confirm that the server is up and running, go to the app logs and check that the server is started.
 
-<img src="../../../static/img/heroku-logs.png" width="200" height="auto" />
+![Heroku Logs](../../../static/img/heroku-logs.png)
 
-![Heroku Create App](../../../static/img/heroku-logs-server.png)
+![Heroku Logs Server](../../../static/img/heroku-logs-server.png)

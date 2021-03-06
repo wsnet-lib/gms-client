@@ -5,7 +5,7 @@ sidebar_label: Getting started
 slug: /
 ---
 
-GWS adds support for multiplayer games through the [WebSocket technology](https://en.wikipedia.org/wiki/WebSocket) on GameMake Studio
+GWS adds support for multiplayer games through the [WebSocket technology](https://en.wikipedia.org/wiki/WebSocket) on GameMaker Studio
 
 Features:
 
@@ -19,4 +19,4 @@ Features:
 
 - The server is quickly deployable to free hosting like Heroku
 
-- Working with Desktop & Mobile games
+- Working with desktop & mobile games
