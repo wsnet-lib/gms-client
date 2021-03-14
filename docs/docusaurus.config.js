@@ -1,23 +1,23 @@
 module.exports = {
-  title: 'GMS Websocket',
-  tagline: 'Create multiplayer games through Websockets with GameMaker Studio',
-  url: 'https://gamemaker-websocket.github.io',
-  baseUrl: '/client/',
+  title: 'WSNET',
+  tagline: 'Create multiplayer games through Websockets with GameMaker Studio and Unity',
+  url: 'https://wsnet-lib.github.io',
+  baseUrl: '/gms-client/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.svg',
-  organizationName: 'gamemaker-websocket',
+  organizationName: 'wsnet-lib',
   projectName: 'client',
   themeConfig: {
     navbar: {
-      title: 'GWS',
+      title: 'WSNET',
       logo: {
-        alt: 'GWS',
+        alt: 'WSNET',
         src: 'img/logo.svg',
       },
       items: [
         {
-          href: 'https://github.com/gamemaker-websocket/client',
+          href: 'https://github.com/wsnet-lib',
           label: 'GitHub',
           position: 'right',
         },
@@ -37,7 +37,7 @@ module.exports = {
 
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/gamemaker-websocket/client/edit/master/docs',
+            'https://github.com/wsnet-lib/gms-client/edit/master/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -4,7 +4,7 @@ title: Send and receive data
 sidebar_label: Send and receive data
 ---
 
-GWS provides several functions to send data to the other players. 
+WSNET provides several functions to send data to the other players. 
 
 **All send functions accept these 3 arguments:**
 

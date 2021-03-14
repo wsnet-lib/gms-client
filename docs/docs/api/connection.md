@@ -35,7 +35,7 @@ net_disconnect();
 
 **Detecting a network disconnection:**
 
-GWS is able to detect a disconnection and automatically try to reconnect the player.
+WSNET is able to detect a disconnection and automatically try to reconnect the player.
 The script `wsnet/events/net_on_connection_close` can be modified to handle this event.
 
 ---

@@ -10,7 +10,7 @@ Lobbies can have only one admin, which is transferable to another player at any 
 
 Lobbies may have an optional password, to allow other players to join it.
 
-The max number of connected players is 254, but this can be limited from the admin.
+The max number of connected players in a lobby is 254, but this can be limited from the admin.
 
 
 **Available public functions:**

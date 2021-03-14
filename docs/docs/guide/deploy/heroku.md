@@ -4,7 +4,7 @@ title: Deploy
 sidebar_label: Deploy
 ---
 
-To let players connect with each other, the GWS server have to be hosted on a cloud machine. This tutorial will guide on deploying the server on the service [Heroku](https://heroku.com), which offers a free plan to get started.
+To let players connect with each other, the WSNET server have to be hosted on a cloud machine. This tutorial will guide on deploying the server on the service [Heroku](https://heroku.com), which offers a free plan to get started.
 
 Other solutions are also available, e.g. AWS, Google Cloud, Digital Ocean, self hosting, etc.. 
 

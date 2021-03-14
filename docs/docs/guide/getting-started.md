@@ -5,7 +5,7 @@ sidebar_label: Getting started
 slug: /
 ---
 
-GWS adds support for multiplayer games through the [WebSocket technology](https://en.wikipedia.org/wiki/WebSocket) on GameMaker Studio
+WSNET adds support for multiplayer games through the [WebSocket technology](https://en.wikipedia.org/wiki/WebSocket) on GameMaker Studio and Unity
 
 Features:
 
