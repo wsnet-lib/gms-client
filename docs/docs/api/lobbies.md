@@ -27,7 +27,7 @@ net_lobby_get_list()
 
 ```js
 // Join an existing lobby
-jsnet_lobby_join(lobby_id, user_name, password)
+net_lobby_join(lobby_id, user_name, password)
 ```
 
 ```js
