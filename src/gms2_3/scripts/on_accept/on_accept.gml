@@ -1,16 +1,13 @@
-/// @description on_connect(result)
-/// @param result
-function on_accept(argument0) {
+/// @description on_accept(success)
+/// @param success
+function on_accept(success) {
 
-	if(argument0)
+	if(success)
 	{ 
 	    room_goto_next();
 	}
 	else
 	{
-	    show_message("Impossible to connect");
+	    show_debug_message("impossible to connect");
 	}
-
-
-
 }

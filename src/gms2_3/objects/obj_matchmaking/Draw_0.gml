@@ -1,9 +1,15 @@
+ 
+var vx = camera_get_view_x(view_camera);
+var vy = camera_get_view_y(view_camera);
+var vw = camera_get_view_width(view_camera);
+var vh = camera_get_view_height(view_camera);
+
 draw_set_color($222222);
-draw_rectangle(__view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ), __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ), __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ), false);
+draw_rectangle(vx, vy, vx + vw, vy + vh, false);
 draw_set_color($eeeeee);
 draw_set_halign(fa_center);
-var cx = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 )/2;
-var cy = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )/2;
+var cx = vx + vw/2;
+var cy = vy + vh/2;
 draw_text(cx, cy, string_hash_to_newline(status));
 draw_set_halign(fa_left);
 

@@ -1,14 +1,8 @@
-/// @description on_start(sender, path_index)
+/// @description on_start(sender, path_idx)
 /// @param sender
-/// @param  path_index
-function on_start(argument0, argument1) {
-	var sender = argument0;
-	global.path_selected = argument1;
+/// @param  path_idx
+function on_start(sender, path_idx) 
+{
+	global.path_selected = path_idx;
 	room_goto_next();
-
-
- 
-
-
-
 }

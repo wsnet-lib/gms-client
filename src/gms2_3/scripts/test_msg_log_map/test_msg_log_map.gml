@@ -11,7 +11,7 @@ function test_msg_log_map(argument0, argument1) {
 	    str += string(key) + ": " + string(argument1[? key]) + ", ";
 	    key = ds_map_find_next(argument1, key);
 	}
-	ds_list_add(obj_test.messages, "[" + string(sender[1]) + "]: " + str)
+	ds_list_add(obj_gws_test.messages, "[" + string(sender[1]) + "]: " + str)
 
 
 

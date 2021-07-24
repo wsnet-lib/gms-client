@@ -2,9 +2,7 @@
 /// @param sender
 /// @param  buffer
 /// @param  buffer_size
-function test_msg_log_buffer(argument0, argument1) {
-	ds_list_add(obj_test.messages, "[" + string(argument0) + "]: " + buffer_to_string(argument1));
-
-
-
+function test_msg_log_buffer(sender, buffer, buffer_size)
+{
+	ds_list_add(obj_gws_test.messages, "[" + string(sender) + "]: (" + string(buffer_size) + ") " + buffer_to_string(buffer));
 }

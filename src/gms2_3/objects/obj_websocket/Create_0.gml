@@ -6,7 +6,6 @@ recv_buffer_merge = buffer_create(1024, buffer_grow, 1);
 msg_buffer = buffer_create(1024, buffer_grow, 1);
 
 packet_buffering = false;
-packet_buffer_index = 0;
 received_header = false;
 
 header_search[0] = 13;

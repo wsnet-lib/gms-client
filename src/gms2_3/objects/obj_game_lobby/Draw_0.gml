@@ -1,8 +1,8 @@
 draw_set_color($222222);
-draw_rectangle(__view_get( e__VW.XView, 0 ), __view_get( e__VW.YView, 0 ), __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ), __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ), false);
+draw_rectangle(camera_get_view_x(view_camera), camera_get_view_y(view_camera), camera_get_view_x(view_camera) + camera_get_view_width(view_camera), camera_get_view_y(view_camera) + camera_get_view_height(view_camera), false);
 draw_set_color($eeeeee);
-var cx = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 )/2;
-var cy = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )/2;
+var cx = camera_get_view_x(view_camera) + camera_get_view_width(view_camera)/2;
+var cy = camera_get_view_y(view_camera) + camera_get_view_height(view_camera)/2;
 draw_set_color(c_blue);
 draw_text(10, 10, string_hash_to_newline(global.net_player_name));
 
@@ -15,7 +15,7 @@ draw_set_halign(fa_center);
 if(is_admin())
 {
     draw_text(cx, cy + 50, string_hash_to_newline("Waiting for players" + controls));
-    if(text_pressed("START GAME > ", 10, __view_get( e__VW.HView, 0 ) - 20, 1))
+    if(text_pressed("START GAME > ", 10, camera_get_view_height(view_camera) - 20, 1))
     {
         net_lobby_allow_join(false);
         global.path_selected  = choose(1, 2);

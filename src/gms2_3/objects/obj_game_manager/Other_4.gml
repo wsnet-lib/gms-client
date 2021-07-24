@@ -7,8 +7,8 @@ backgrounds[0] = background0;
 backgrounds[1] = background1;
 backgrounds[2] = background0;
 
-global.current_path = paths[global.path_selected];
-__background_set( e__BG.Index, 0, backgrounds[global.path_selected] );
+global.current_path = paths[global.path_selected]; 
+
 
 var sz = ds_list_size(global.net_players);
 for(var i = 0; i < sz; i++)
@@ -24,13 +24,13 @@ for(var i = 0; i < sz; i++)
     //create me
     if(player_id == global.net_player_id)
     {
-        instance_create(px, py - i * 32, obj_car);
+        instance_create_depth(px, py - i * 32, 0, obj_car);
         continue;
     }
     //create remote players
     else
     {
-        var inst = instance_create(px , py - i * 32, obj_car_remote);
+        var inst = instance_create_depth(px , py - i * 32, 0, obj_car_remote);
         inst.player_id = player_id;
         inst.player_name = player_name;
     }
@@ -47,9 +47,10 @@ for(var i = 0; i < 1; i+= incr)
     var j = 0;
     repeat(3)
     {
-        var inst = instance_create(
+        var inst = instance_create_depth(
             px + lengthdir_x(40, j), 
-            py + lengthdir_y(40, j), obj_boost);
+            py + lengthdir_y(40, j), 
+			0, obj_boost);
         inst.my_id = bid++;
         j+=360/3;
     }

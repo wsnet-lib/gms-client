@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "websocket",
-    "path": "folders/Scripts/wsnet/internal/websocket.yy",
+    "path": "folders/GWS/Scripts/internal/websocket.yy",
   },
   "resourceVersion": "1.0",
   "name": "gws_disconnect",

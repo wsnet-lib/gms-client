@@ -7,7 +7,7 @@ if(!connected)
 
 messages = ds_list_create();
 
-draw_set_font(fnt_arial);
+draw_set_font(fnt_pixel);
 
 enum msg_test
 {

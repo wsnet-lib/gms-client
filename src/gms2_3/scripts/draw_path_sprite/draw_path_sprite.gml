@@ -40,7 +40,7 @@ function draw_path_sprite(argument0, argument1, argument2, argument3, argument4,
 	var alpha = argument9;
 	var segments = path_get_number(path) * max(1, argument10);
 	var tiled = argument11;
-	var closed = path_get_closed(path);
+	//var closed = path_get_closed(path);
 	var spw = path_get_length(path) / sprite_get_width(argument4);
 
 	draw_primitive_begin_texture(pr_trianglestrip, sprite);
@@ -48,12 +48,12 @@ function draw_path_sprite(argument0, argument1, argument2, argument3, argument4,
 	var lastDir = 0;
 	for (var i = 0; i <= segments; i++)
 	{
-	    var stepPrev = (i % segments) / segments;
+	    //var stepPrev = (i % segments) / segments;
 	    var step = i / segments;    
 	    var stepNext = (i + 1) / segments;
     
-	    var pxPrev = pathX + path_get_x(path, stepPrev);
-	    var pyPrev = pathY + path_get_y(path, stepPrev);
+	    //var pxPrev = pathX + path_get_x(path, stepPrev);
+	    //var pyPrev = pathY + path_get_y(path, stepPrev);
     
 	    var px = pathX + path_get_x(path, step);
 	    var py = pathY + path_get_y(path, step);
@@ -78,9 +78,9 @@ function draw_path_sprite(argument0, argument1, argument2, argument3, argument4,
 	    draw_vertex_texture_colour(x2, y2, uv, 0, color, alpha);
 	}
 
-	texture_set_repeat(true);
+	gpu_set_texrepeat(true);
 	draw_primitive_end();
-	texture_set_repeat(false);
+	gpu_set_texrepeat(false);
 
 
 

@@ -1,9 +1,9 @@
 /// @description net_on(msg_id, callback_function)
 /// @param msg_id
 /// @param  callback_function
-function net_on(argument0, argument1) {
+function net_on(msg_id, callback_function) {
 
-	if(argument0 < 0 || argument0 > global.net_callbacks_max)
+	if(msg_id < 0 || msg_id > global.net_callbacks_max)
 	{
 	    if(debug_mode)
 	        show_error("ERROR: CALLBACK REGISTRATION OUT OF BOUND", true);
@@ -13,11 +13,7 @@ function net_on(argument0, argument1) {
 	    return false;
 	}
 
-	global.net_callbacks[argument0] = argument1;
+	global.net_callbacks[msg_id] = callback_function;
 
 	return true;
-    
-
-
-
 }

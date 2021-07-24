@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "events",
-    "path": "folders/Scripts/wsnet/events.yy",
+    "path": "folders/GWS/Scripts/events.yy",
   },
   "resourceVersion": "1.0",
   "name": "net_on_player_leave",

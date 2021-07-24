@@ -1,3 +1,6 @@
+var vw = camera_get_view_width(view_camera);
+var vh = camera_get_view_height(view_camera);
+
 draw_set_color(c_white);
 if(global.race_end)
     draw_set_color(c_purple);
@@ -27,7 +30,7 @@ draw_text(10, 22, string_hash_to_newline(_str));
 if(instance_exists(obj_car))
 {
     draw_set_color(c_dkgray);
-    draw_text(10, __view_get( e__VW.HView, 0 ) - 30, string_hash_to_newline("Boost: " + string(obj_car.boost)));
+    draw_text(10, vh - 30, string_hash_to_newline("Boost: " + string(obj_car.boost)));
     draw_set_color(c_white);   
     
     
@@ -36,7 +39,7 @@ if(instance_exists(obj_car))
     {
         var scale = 1 +  3 * ceil(obj_car.alarm[1]/room_speed) - obj_car.alarm[1]/room_speed;
         draw_set_halign(fa_center);
-        draw_text_transformed(__view_get( e__VW.WView, 0 )/2, __view_get( e__VW.HView, 0 )/2, string_hash_to_newline(ceil(obj_car.alarm[1]/room_speed)), scale, scale, 0);
+        draw_text_transformed(vw/2, vh/2, string_hash_to_newline(ceil(obj_car.alarm[1]/room_speed)), scale, scale, 0);
         draw_set_halign(fa_left);
     }
 }
@@ -50,7 +53,7 @@ else
 if(esc_pressed >= 1)
 {
     draw_set_halign(fa_center);
-    draw_text(__view_get( e__VW.WView, 0 )/2, __view_get( e__VW.HView, 0 )/2, string_hash_to_newline("Hold ESC to quit"));
+    draw_text(vw/2, vh/2, string_hash_to_newline("Hold ESC to quit"));
     draw_set_halign(fa_left);
     if(esc_pressed > 60)
         game_restart();

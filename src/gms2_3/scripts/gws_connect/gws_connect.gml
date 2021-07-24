@@ -4,7 +4,7 @@
 function gws_connect(argument0, argument1) {
 	//connect to the websocket server 
 
-	var inst = instance_create(0, 0, obj_websocket);
+	var inst = instance_create_depth(0, 0, 0, obj_websocket);
 
 	with(inst)
 	{
@@ -14,7 +14,6 @@ function gws_connect(argument0, argument1) {
 	    socket = network_create_socket(network_socket_tcp);
 	    if(network_connect_raw(socket, url, port) < 0)
 	    {
-	        show_debug_message("can't_connect");
 	        instance_destroy();
 	        return noone;
 	    }
@@ -45,9 +44,5 @@ function gws_connect(argument0, argument1) {
 	    alarm[0] = ping_interval * room_speed;
 	}
 
-	return inst;
-
-
-
-
+	return inst; 
 }
