@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "car_game",
-    "path": "folders/Objects/car_game.yy",
+    "path": "folders/Demo/Objects/car_game.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_menu",

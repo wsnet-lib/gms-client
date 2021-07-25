@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a2b820c4-9d3f-44c0-b9d7-0726bcb1599f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "tilesets",
-    "path": "folders/Sprites/tilesets.yy",
+    "path": "folders/Demo/Sprites/tilesets.yy",
   },
   "resourceVersion": "1.0",
   "name": "background1",

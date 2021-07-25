@@ -1,10 +1,10 @@
 /// @description net_on_lobby_get_banned(success, banned_players)
 /// @param success
-/// @param  banned_players
-function net_on_lobby_get_banned(argument0, argument1) {
-	if(argument0)
+/// @param banned_players
+function net_on_lobby_get_banned(success, banned_players) 
+{
+	if(success)
 	{
-	    var banned_players = argument1;
 	    var sz = array_length_1d(banned_players);
 	    var str = "";
 	    for(var i = 0; i < sz; i++)
@@ -20,7 +20,4 @@ function net_on_lobby_get_banned(argument0, argument1) {
 	{
 	    show_debug_message("Error, can't get banned list: " + net_decode_error(global.net_error_id));
 	}
-
-
-
 }

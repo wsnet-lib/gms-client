@@ -38,7 +38,7 @@
   ],
   "parent": {
     "name": "Paths",
-    "path": "folders/Paths.yy",
+    "path": "folders/Demo/Paths.yy",
   },
   "resourceVersion": "1.0",
   "name": "path_pista_1",

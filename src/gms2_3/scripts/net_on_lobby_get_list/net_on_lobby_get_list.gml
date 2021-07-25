@@ -1,5 +1,6 @@
 /// @description net_on_lobby_get_list()
-function net_on_lobby_get_list() {
+function net_on_lobby_get_list()
+{
 	//lobbies has been received
 
 	var lobbies = global.net_lobbies;
@@ -16,7 +17,4 @@ function net_on_lobby_get_list() {
     
 	    show_debug_message(lobby);
 	}
-
-
-
 }

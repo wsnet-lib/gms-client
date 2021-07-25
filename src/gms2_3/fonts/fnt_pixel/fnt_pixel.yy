@@ -127,7 +127,7 @@
   "maintainGms1Font": true,
   "parent": {
     "name": "Fonts",
-    "path": "folders/Fonts.yy",
+    "path": "folders/Demo/Fonts.yy",
   },
   "resourceVersion": "1.0",
   "name": "fnt_pixel",

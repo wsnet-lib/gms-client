@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cd7acabb-7e61-4357-ba72-2bb041fef24f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "path": "folders/Demo/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_car",

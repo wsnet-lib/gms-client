@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "msg",
-    "path": "folders/Scripts/testing/msg.yy",
+    "path": "folders/Demo/Scripts/testing/msg.yy",
   },
   "resourceVersion": "1.0",
   "name": "test_msg_log",

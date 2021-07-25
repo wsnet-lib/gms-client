@@ -83,9 +83,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7958e010-f6ba-4660-b0d2-830826eee6c7","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "path": "folders/Demo/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_boost",

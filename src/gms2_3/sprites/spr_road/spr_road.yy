@@ -75,9 +75,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8311c22a-3286-4955-97e5-37f3ade3897a","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "path": "folders/Demo/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_road",

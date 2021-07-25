@@ -1,9 +1,8 @@
-/// @description net_on_lobby_join(success, lobby_id, player_id)
+/// @description net_on_lobby_join(success)
 /// @param success
-/// @param  lobby_id
-/// @param  player_id
-function net_on_lobby_join(argument0) {
-	if(argument0)
+function net_on_lobby_join(success)
+{
+	if(success)
 	{
 	    show_debug_message ( 
 	        "[JOINED] lobby id: " + string(global.net_lobby_id) + ", " +
@@ -11,7 +10,6 @@ function net_on_lobby_join(argument0) {
 	    );
     
 	    room_goto_next();
-    
 	}
 	else
 	{
@@ -24,7 +22,4 @@ function net_on_lobby_join(argument0) {
 	    else
 	        show_debug_message("Error, can't join:  " + net_decode_error(global.net_error_id));
 	}
-
-
-
 }
