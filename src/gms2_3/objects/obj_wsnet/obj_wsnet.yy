@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Objects",
-    "path": "folders/GWS/Objects.yy",
+    "path": "folders/WSNet/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_wsnet",

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "game",
-    "path": "folders/WSNet/Scripts/game.yy",
+    "name": "Network Events",
+    "path": "folders/Demo/Network Events.yy",
   },
   "resourceVersion": "1.0",
-  "name": "net_event",
+  "name": "register_network_events",
   "tags": [],
   "resourceType": "GMScript",
 }

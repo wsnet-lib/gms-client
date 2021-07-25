@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "internal",
-    "path": "folders/GWS/Scripts/internal.yy",
+    "path": "folders/WSNet/Scripts/internal.yy",
   },
   "resourceVersion": "1.0",
   "name": "net_decode_error",
