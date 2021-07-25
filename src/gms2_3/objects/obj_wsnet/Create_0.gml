@@ -1,24 +1,23 @@
 
-buffer = buffer_create(1024, buffer_grow, 1);
- 
-global.net_callbacks_max = 1024;
-global.net_callbacks = array_create(global.net_callbacks_max);
-for(var i = global.net_callbacks_max - 1; i >= 0; i--)
-    global.net_callbacks[i] = -1;
-    
-global.net_lobby_id = -1;
-global.net_player_id = -1;
-global.net_player_name = "";
-global.net_admin_id = -1;
-global.net_players = ds_list_create();
-global.net_players_map = ds_map_create();
-global.net_lobbies = ds_list_create();
-
-ws = gws_connect(global.net_app_url, global.net_app_port);
-if(ws == noone)
+enum wsnet_evt
 {
-    instance_destroy();
-    exit;
+	connection_close,
+	error,
+	lobby_create,
+	lobby_join,
+	lobby_leave,
+	lobby_allow_join,
+	lobby_get_banned,
+	lobby_get_list,
+	lobby_max_players,
+	lobby_password,
+	lobby_transfer,
+	lobby_unban,
+	player_join,
+	player_leave,
+	player_kickban,
+	player_username,
+	events_count
 }
 
 enum wsnet_cmd 
@@ -86,4 +85,32 @@ enum wsnet_error
     incorrect_type,
 }
 
+
+buffer = buffer_create(1024, buffer_grow, 1);
+ 
+empty_callback = function(){}
+
+global.net_callbacks_max = 1024;
+global.net_callbacks = array_create(global.net_callbacks_max);
+for(var i = global.net_callbacks_max - 1; i >= 0; i--)
+    global.net_callbacks[i] = -1;
+    
+global.net_events = array_create(wsnet_evt.events_count);
+for(var i = wsnet_evt.events_count - 1; i >= 0; i--)
+    global.net_events[i] = empty_callback;
+
+global.net_lobby_id = -1;
+global.net_player_id = -1;
+global.net_player_name = "";
+global.net_admin_id = -1;
+global.net_players = ds_list_create();
+global.net_players_map = ds_map_create();
+global.net_lobbies = ds_list_create();
+
+ws = gws_connect(global.net_app_url, global.net_app_port);
+if(ws == noone)
+{
+    instance_destroy();
+    exit;
+}
 

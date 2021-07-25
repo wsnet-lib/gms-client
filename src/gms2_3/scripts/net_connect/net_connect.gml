@@ -4,7 +4,6 @@
 /// @param callback
 function net_connect(app_url, app_port, callback) 
 {
-
 	with(obj_wsnet)
 	{
 	    instance_destroy();

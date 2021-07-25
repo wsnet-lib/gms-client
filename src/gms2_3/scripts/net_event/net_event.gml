@@ -1,9 +1,9 @@
 /// @description net_event(event_type, callback_function)
 /// @param event_type
 /// @param  callback_function
-function net_on(event_type, callback_function) 
+function net_event(event_type, callback_function) 
 {
-	if(event_type < 0 || event_type > global.net_callbacks_max)
+	if(event_type < 0 || event_type > wsnet_evt.count)
 	{
 	    if(debug_mode)
 	        show_error("ERROR: CALLBACK REGISTRATION OUT OF BOUND", true);
@@ -12,6 +12,6 @@ function net_on(event_type, callback_function)
         
 	    return false;
 	}
-	global.net_callbacks[msg_id] = callback_function;
+	global.net_events[msg_id] = callback_function;
 	return true;
 }
