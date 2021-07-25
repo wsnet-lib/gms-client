@@ -32,14 +32,14 @@ function gws_on_receive(buffer)
 	                ds_list_add(global.net_lobbies, lobby);
 	            }
             
-	            net_on_lobby_get_list();
+				global.net_events[wsnet_evt.lobby_get_list]();
 	            break;
             
 	        case wsnet_cmd.lobby_create:
 	            global.net_error_id = buffer_read(buffer, buffer_u8);
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_create(false, -1);
+	                global.net_events[wsnet_evt.lobby_create](false, -1);
 	                break;
 	            }
 	            global.net_lobby_id = buffer_read(buffer, buffer_u32);
@@ -54,14 +54,14 @@ function gws_on_receive(buffer)
 	            ds_list_add(global.net_players, player);
 	            ds_map_add(global.net_players_map, global.net_player_id, player);
             
-	            net_on_lobby_create(true, global.net_lobby_id);
+	            global.net_events[wsnet_evt.lobby_create](true, global.net_lobby_id);
 	            break;
             
 	        case wsnet_cmd.lobby_join:
 	            global.net_error_id = buffer_read(buffer, buffer_u8);
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_join(false);
+	                global.net_events[wsnet_evt.lobby_join](false);
 	                break;
 	            }
 	            ds_list_clear(global.net_players);
@@ -83,7 +83,7 @@ function gws_on_receive(buffer)
 	                ds_list_add(global.net_players, player);
 	                ds_map_add(global.net_players_map, player_id, player);
 	            }
-	            net_on_lobby_join(true);
+	            global.net_events[wsnet_evt.lobby_join](true);
         
 	            break;
                         
@@ -94,7 +94,7 @@ function gws_on_receive(buffer)
 	            player[1] = buffer_read(buffer, buffer_string);
 	            ds_list_add(global.net_players, player);
 	            ds_map_add(global.net_players_map, player_id, player);
-	            net_on_player_join(player);
+				global.net_events[wsnet_evt.player_join](player);
 	            break;
              
 	        case wsnet_cmd.lobby_leave:
@@ -105,7 +105,7 @@ function gws_on_receive(buffer)
 	            ds_list_clear(global.net_players);
 	            ds_map_clear(global.net_players_map);
 	            global.net_error_id = buffer_read(buffer, buffer_u8);
-	            net_on_lobby_leave(global.net_error_id != wsnet_error.no_error);            
+	            global.net_events[wsnet_evt.lobby_leave](global.net_error_id != wsnet_error.no_error);            
 	            break;
             
 	        case wsnet_cmd.lobby_player_left:
@@ -118,7 +118,7 @@ function gws_on_receive(buffer)
 	                if(idx >= 0)
 	                    ds_list_delete(global.net_players, idx); 
 	                ds_map_delete(global.net_players_map, player_id);
-	                net_on_player_leave(player);
+	                global.net_events[wsnet_evt.player_leave](player);
 	            }
 	            break;
             
@@ -126,59 +126,59 @@ function gws_on_receive(buffer)
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_transfer(false, -1);
+	                global.net_events[wsnet_evt.lobby_transfer](false, -1);
 	                break;
 	            }
 	            global.net_admin_id = buffer_read(buffer, buffer_u8); 
-	            net_on_lobby_transfer(true, global.net_admin_id);
+	            global.net_events[wsnet_evt.lobby_transfer](true, global.net_admin_id);
 	            break;
             
         
 	        case wsnet_cmd.lobby_transfer_changed:
 	            global.net_admin_id = buffer_read(buffer, buffer_u8); 
-	            net_on_lobby_transfer(true, global.net_admin_id);
+	            global.net_events[wsnet_evt.lobby_transfer](true, global.net_admin_id);
 	            break;
         
 	        case wsnet_cmd.lobby_allow_join:
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_allow_join(false, -1);
+	                global.net_events[wsnet_evt.lobby_allow_join](false, -1);
 	                break;
 	            }
 	            var allow_join = buffer_read(buffer, buffer_u8);
-	            net_on_lobby_allow_join(true, allow_join);
+	            global.net_events[wsnet_evt.lobby_allow_join](true, allow_join);
 	            break;
             
 	         case wsnet_cmd.lobby_allow_join_changed:
 	            var allow_join = buffer_read(buffer, buffer_u8);
-	            net_on_lobby_allow_join(true, allow_join);
+	            global.net_events[wsnet_evt.lobby_allow_join](true, allow_join);
 	            break;
             
 	        case wsnet_cmd.lobby_max_players:
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_max_players(false, -1);
+	                global.net_events[wsnet_evt.lobby_max_players](false, -1);
 	                break;
 	            }
 	            var max_players = buffer_read(buffer, buffer_u8);
-	            net_on_lobby_max_players(true, max_players);
+	            global.net_events[wsnet_evt.lobby_max_players](true, max_players);
 	            break;
             
 	        case wsnet_cmd.lobby_max_players_changed:
 	            var max_players = buffer_read(buffer, buffer_u8);
-	            net_on_lobby_max_players(true, max_players);
+	            global.net_events[wsnet_evt.lobby_max_players](true, max_players);
 	            break;
             
 	        case wsnet_cmd.lobby_password:
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_password(false);
+	                global.net_events[wsnet_evt.lobby_password](false);
 	                break;
 	            }
-	            net_on_lobby_password(true);
+	            global.net_events[wsnet_evt.lobby_password](true);
 	            break;
             
 	        case wsnet_cmd.lobby_username:
@@ -188,7 +188,7 @@ function gws_on_receive(buffer)
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
 	                player[1] = global.net_player_name;
-	                net_on_player_username(false, player);
+	                global.net_events[wsnet_evt.player_username](false, player);
 	                break;
 	            }
 	            global.net_player_name = buffer_read(buffer, buffer_string); 
@@ -197,7 +197,7 @@ function gws_on_receive(buffer)
 	            var p = global.net_players_map[? player[0]];
 	            if(p != undefined)
 	                p[@ 1] = player[1];
-	            net_on_player_username(true, player);
+	            global.net_events[wsnet_evt.player_username](true, player);
 	            break;
             
 	         case wsnet_cmd.lobby_player_username:
@@ -210,14 +210,14 @@ function gws_on_receive(buffer)
 	            if(p != undefined)
 	                p[@ 1] = player[1];
             
-	            net_on_player_username(true, player);
+	            global.net_events[wsnet_evt.player_username](true, player);
 	            break;
             
 	        case wsnet_cmd.lobby_kick:
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_player_kickban(false, -1, 0);
+	                global.net_events[wsnet_evt.player_kickban](false, -1, 0);
 	                break;
 	            }
 	            var player_id = buffer_read(buffer, buffer_u8); 
@@ -230,7 +230,7 @@ function gws_on_receive(buffer)
 	                if(idx >= 0)
 	                    ds_list_delete(global.net_players, idx); 
 	                ds_map_delete(global.net_players_map, player_id);
-	                net_on_player_kickban(true, player, ban);
+	                global.net_events[wsnet_evt.player_kickban](true, player, ban);
 	            }
 	        break;
             
@@ -242,7 +242,7 @@ function gws_on_receive(buffer)
 	            if(player_id == global.net_player_id)
 	            {
 	                var player = global.net_players_map[? player_id];
-	                net_on_player_kickban(true, player, ban);
+	                global.net_events[wsnet_evt.player_kickban](true, player, ban);
                 
 	                global.net_lobby_id = -1;
 	                global.net_player_id = -1;
@@ -261,7 +261,7 @@ function gws_on_receive(buffer)
 	                if(idx >= 0)
 	                    ds_list_delete(global.net_players, idx); 
 	                ds_map_delete(global.net_players_map, player_id);
-	                net_on_player_kickban(true, player, ban);
+	                global.net_events[wsnet_evt.player_kickban](true, player, ban);
 	            }             
 	        break;
         
@@ -269,17 +269,17 @@ function gws_on_receive(buffer)
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_unban(false, "");
+	                global.net_events[wsnet_evt.lobby_unban](false, "");
 	                break;
 	            }
-	            net_on_lobby_unban(true, buffer_read(buffer, buffer_string));
+	            global.net_events[wsnet_evt.lobby_unban](true, buffer_read(buffer, buffer_string));
 	        break;
         
 	        case wsnet_cmd.lobby_bans:
 	            global.net_error_id = buffer_read(buffer, buffer_u8); 
 	            if(global.net_error_id != wsnet_error.no_error)
 	            {
-	                net_on_lobby_get_banned(false, undefined);
+					global.net_events[wsnet_evt.lobby_get_banned](false, undefined);
 	                break;
 	            }
             
@@ -292,16 +292,16 @@ function gws_on_receive(buffer)
 	                player[1] = buffer_read(buffer, buffer_string);
 	                arr[i] = player;
 	            }
-	            net_on_lobby_get_banned(true, arr);
+	            global.net_events[wsnet_evt.lobby_get_banned](true, arr);
 	            break;
         
 	        case wsnet_cmd.error:
-	            net_on_error(buffer_read(buffer, buffer_u8), "");
+	            global.net_events[wsnet_evt.error](buffer_read(buffer, buffer_u8), "");
 	        break;
         
 	        default:
 	            show_debug_message(" - content: " + str);
-	            net_on_error(wsnet_error.command_not_found, "");
+	            global.net_events[wsnet_evt.error](wsnet_error.command_not_found, "");
 	            break;
 	    }
     

@@ -1,8 +1,8 @@
-/// @description net_on_unban(success, short_hash)
+/// @description net_on_lobby_unban(success, short_hash)
 /// @param success
 /// @param short_hash
-function net_on_lobby_unban(success, short_hash) {
- 
+function net_on_lobby_unban(success, short_hash) 
+{ 
 	if(success)
 	{
 	    //successfully changed

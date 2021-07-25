@@ -1,4 +1,4 @@
-/// @description net_on_player_kicked(success, player, banned) 
+/// @description net_on_player_kickban(success, player, banned) 
 /// @param success
 /// @param player
 /// @param banned

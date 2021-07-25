@@ -1,6 +1,6 @@
 /// @description net_on_lobby_create(success, lobby_id)
 /// @param success
-/// @param  lobby_id
+/// @param lobby_id
 function net_on_lobby_create(success, lobby_id) 
 {
 	if(success)

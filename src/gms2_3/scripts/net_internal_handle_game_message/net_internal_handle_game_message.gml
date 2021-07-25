@@ -12,7 +12,7 @@ function net_internal_handle_game_message(buffer, buffer_size)
 	{
 	    log("sender id:", sender_id, ", msg_id:", msg_id, ", type:", type);
 	    log_buffer(buffer_read(buffer, buffer_size - buffer_tell(buffer)));
-	    net_on_error(wsnet_error.callback_not_found, "Error: unregistered callback for msg_id = " + string(msg_id));
+		global.net_events[wsnet_evt.error](wsnet_error.callback_not_found, "Error: unregistered callback for msg_id = " + string(msg_id));
 	    return 0;
 	}
 
@@ -142,7 +142,7 @@ function net_internal_handle_game_message(buffer, buffer_size)
 	        break;
 
 	    default:
-	        net_on_error(wsnet_error.incorrect_type, "Error: Incorrect type " + string(type));
+	        global.net_events[wsnet_evt.error](wsnet_error.incorrect_type, "Error: Incorrect type " + string(type));
 	        return 0;
 	}
 }

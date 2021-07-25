@@ -1,6 +1,6 @@
 /// @description net_on_player_username(success, player)
 /// @param success
-/// @param  player
+/// @param player
 function net_on_player_username(success, player) 
 {
 	if(success)
