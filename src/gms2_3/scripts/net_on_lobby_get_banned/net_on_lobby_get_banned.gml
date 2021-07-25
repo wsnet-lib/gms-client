@@ -5,7 +5,7 @@ function net_on_lobby_get_banned(success, banned_players)
 {
 	if(success)
 	{
-	    var sz = array_length_1d(banned_players);
+	    var sz = array_length(banned_players);
 	    var str = "";
 	    for(var i = 0; i < sz; i++)
 	    {

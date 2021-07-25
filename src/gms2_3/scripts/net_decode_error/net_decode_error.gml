@@ -1,7 +1,8 @@
 /// @description net_decode_error(error_id)
 /// @param error_id
-function net_decode_error(argument0) {
-	switch(argument0)
+function net_decode_error(error_id) 
+{
+	switch(error_id)
 	{
 	    case wsnet_error.command_not_found:
 	        return "Command not found";
@@ -41,8 +42,4 @@ function net_decode_error(argument0) {
         
 	}
 	return "Unknown error";
-
-
-
-
 }

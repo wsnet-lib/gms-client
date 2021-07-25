@@ -11,7 +11,4 @@ function net_lobby_leave() {
 	    buffer_write(buffer, buffer_u8, wsnet_cmd.lobby_leave); 
 	    return gws_send_buffer(ws, buffer, buffer_tell(buffer));
 	}
-
-
-
 }

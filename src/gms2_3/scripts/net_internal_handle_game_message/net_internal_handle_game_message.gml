@@ -1,10 +1,8 @@
 /// @description net_internal_handle_game_message(buffer, buffer_size)
 /// @param buffer
 /// @param  buffer_size
-function net_internal_handle_game_message(argument0, argument1) {
-
-	var buffer = argument0;
-	var buffer_size = argument1;
+function net_internal_handle_game_message(buffer, buffer_size) 
+{
 	var sender_id = buffer_read(buffer, buffer_u8);
 	var msg_id = buffer_read(buffer, buffer_u16);
 	var type = buffer_read(buffer, buffer_u8);
@@ -147,13 +145,4 @@ function net_internal_handle_game_message(argument0, argument1) {
 	        net_on_error(wsnet_error.incorrect_type, "Error: Incorrect type " + string(type));
 	        return 0;
 	}
-
-
-
-
-
-
-
-
-
 }

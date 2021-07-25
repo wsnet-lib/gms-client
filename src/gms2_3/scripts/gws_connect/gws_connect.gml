@@ -1,15 +1,16 @@
 /// @description gws_connect(url, port)
 /// @param url
-/// @param  port
-function gws_connect(argument0, argument1) {
+/// @param port
+function gws_connect(_url, _port)
+{
 	//connect to the websocket server 
 
 	var inst = instance_create_depth(0, 0, 0, obj_websocket);
 
 	with(inst)
 	{
-	    url = argument0;
-	    port = argument1;
+	    url = _url;
+	    port = _port;
      
 	    socket = network_create_socket(network_socket_tcp);
 	    if(network_connect_raw(socket, url, port) < 0)

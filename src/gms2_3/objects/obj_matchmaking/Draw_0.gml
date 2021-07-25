@@ -22,7 +22,7 @@ draw_circle(cx, cy - 50, 10, 0);
 draw_set_color($eeeeee);
 
 if(keyboard_check_pressed(vk_right))
-    global.car_color = min(array_length_1d(global.car_colors) -1, global.car_color + 1);
+    global.car_color = min(array_length(global.car_colors) -1, global.car_color + 1);
 else if(keyboard_check_pressed(vk_left))
     global.car_color = max(0, global.car_color - 1);
 

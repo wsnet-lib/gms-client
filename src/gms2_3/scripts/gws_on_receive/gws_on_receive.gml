@@ -313,7 +313,4 @@ function gws_on_receive(buffer)
 	{
 	    show_debug_message("RECEIVED CORRUPTED MESSAGE");
 	}
-
-
-
 }

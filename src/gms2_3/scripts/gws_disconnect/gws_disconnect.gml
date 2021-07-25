@@ -1,11 +1,11 @@
-/// @description gws_disconnect(ws)
-/// @param ws
-function gws_disconnect(argument0) {
-
-	if(!instance_exists(argument0))
+/// @description gws_disconnect(websocket)
+/// @param websocket
+function gws_disconnect(websocket) 
+{
+	if(!instance_exists(websocket))
 	    return false;
     
-	with(argument0)
+	with(websocket)
 	{
 	    //send disconnect 
 	    buffer_seek(send_buffer, buffer_seek_start, 0);
@@ -24,7 +24,4 @@ function gws_disconnect(argument0) {
 	    instance_destroy();
 	}
 	return true;
-
-
-
 }

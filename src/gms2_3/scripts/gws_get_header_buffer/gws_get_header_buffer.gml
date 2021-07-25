@@ -1,11 +1,10 @@
 /// @description gws_get_send_buffer(websocket, payload_size)
 /// @param websocket
-/// @param  payload_size
-function gws_get_header_buffer(argument0, argument1) {
-
-	with(argument0)
+/// @param payload_size
+function gws_get_header_buffer(websocket, payload_size)
+{
+	with(websocket)
 	{ 
-	    var payload_size = argument1;
 
 	    buffer_seek(send_buffer, buffer_seek_start, 0); 
       
@@ -37,7 +36,4 @@ function gws_get_header_buffer(argument0, argument1) {
 
 	    return send_buffer;
 	}
-
-
-
 }

@@ -1,12 +1,11 @@
 /// @description gws_send_string(websocket, text)
 /// @param websocket
-/// @param  text
-function gws_send_string(argument0, argument1) {
+/// @param text
+function gws_send_string(websocket, text)
+{
+	var payload_size = string_byte_length(text);
 
-	var payload = argument1;
-	var payload_size = string_byte_length(payload);
-
-	with(argument0)
+	with(websocket)
 	{
 	    buffer_seek(send_buffer, buffer_seek_start, 0); 
       
@@ -31,11 +30,11 @@ function gws_send_string(argument0, argument1) {
 	        }
 	        else
 	        {
-	            show_debug_message("payload too big, max is 65535");
+	            show_debug_message("text too big, max is 65535");
 	            return -1;
 	        }
 	    }
-	    buffer_write(send_buffer, buffer_text, payload);
+	    buffer_write(send_buffer, buffer_text, text);
     
     
 	    if(network_send_raw(socket, send_buffer, buffer_tell(send_buffer)) < 0)
@@ -44,8 +43,6 @@ function gws_send_string(argument0, argument1) {
 	    }
        
 	}
+	
 	return true;
-
-
-
 }
