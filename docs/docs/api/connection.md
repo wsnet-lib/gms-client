@@ -14,13 +14,21 @@ net_connect("localhost", 8080, noone);
 
 You can pass a function to the third argument, if you want to do something when the connection is established.
 
-Example:
+Example 1 (Regular function):
 
 ```js
 function on_connection(connected) {
   if (!connected) show_error("Not connected", false);
 }
 net_connect("yourserver.com", 80, on_connection);
+```
+
+Example 2 (Anonymous function):
+
+```js
+net_connect("yourserver.com", 80, function (connected) {
+  if (!connected) show_error("Not connected", false);
+});
 ```
 
 ---
@@ -30,17 +38,3 @@ net_connect("yourserver.com", 80, on_connection);
 ```js
 net_disconnect();
 ```
-
----
-
-**Detecting a network disconnection:**
-
-WSNET is able to detect a disconnection and automatically try to reconnect the player.
-The script `wsnet/events/net_on_connection_close` can be modified to handle this event.
-
----
-
-**Handling errors:**
-
-Errors are handled within the script `wsnet/events/net_on_error`. 
-This function will be called also for validation errors of the other commands.

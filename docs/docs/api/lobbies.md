@@ -13,7 +13,7 @@ Lobbies may have an optional password, to allow other players to join it.
 The max number of connected players in a lobby is 254, but this can be limited from the admin.
 
 
-**Available public functions:**
+### Public functions
 
 ```js
 // Create a lobby (use an empty string to disable the password)
@@ -48,7 +48,7 @@ net_lobby_username(username)
 
 ---
 
-**Admin functions:**
+### Admin functions
 
 ```js
 // Specify if the lobby allows other players to join
@@ -91,56 +91,3 @@ net_lobby_transfer(player_id)
 net_lobby_unban(hashed_ip)
 ```
 
----
-
-**Lobby events:**
-
-```js
-// When the lobby has been created
-net_on_lobby_create(success, lobby_id)
-```
-
-```js
-// When the lobbies list has been retrieved
-net_on_lobby_get_list()
-```
-
-```js
-// When a player joins the lobby
-net_on_lobby_join(success, lobby_id, player_id)
-```
-
-```js
-// When a player leaves the lobby
-net_on_lobby_leave(success)
-```
-
-```js
-// When the allow_join option has been set
-net_on_lobby_allow_join(success, allow)
-```
-
-```js
-// When the max players option has been set
-net_on_lobby_max_players(success, max_players)
-```
-
-```js
-// When the lobby password has been changed
-net_on_lobby_password(success)
-```
-
-```js
-// When the admin has been transfered
-net_on_lobby_transfer(success, new_admin_id)
-```
-
-```js
-// When a player has been unbanned
-net_on_unban(success, hashed_ip)
-```
-
-```js
-// When the list of banned players has been retrieved
-net_on_lobby_get_banned(success, banned_players)
-```

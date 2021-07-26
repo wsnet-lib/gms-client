@@ -7,8 +7,9 @@ module.exports = {
     ],
     API: [
       'api/connection',
-      'api/messages',
       'api/lobbies',
+      'api/events',
+      'api/messages',
       'api/players',
     ],
   },

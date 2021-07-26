@@ -4,6 +4,8 @@ title: Send and receive data
 sidebar_label: Send and receive data
 ---
 
+### Send
+
 WSNET provides several functions to send data to the other players. 
 
 **All send functions accept these 3 arguments:**
@@ -37,6 +39,8 @@ net_send_string(0, 12, "Hello world!");
 - `net_send_map()` - Map of numbers/strings/booleans/int64
 
 ---
+
+### Receive
 
 **Listen for incoming messages:**
 
