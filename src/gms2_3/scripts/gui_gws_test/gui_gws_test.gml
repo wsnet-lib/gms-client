@@ -1,5 +1,6 @@
 /// @description gui_test
-function gui_gws_test() {
+function gui_gws_test() 
+{
 
 	draw_set_color(c_black);
 	var sz = ds_list_size(global.net_players);
@@ -28,7 +29,7 @@ function gui_gws_test() {
 	    draw_text(250, 100 + (n++) * 10, string_hash_to_newline(messages[| i]));
 
 	var increment = 20;
-	var py = 0;
+	var px = 0, py = 0;
 
 	if(text_pressed("net_lobby_create", 10, py, 1))
 	{
@@ -91,8 +92,6 @@ function gui_gws_test() {
 	}
 	py += increment;
 
-
-
 	if(text_pressed("net_lobby_transfer", 10, py, 1))
 	{
 	    log("net_lobby_transfer");
@@ -113,7 +112,6 @@ function gui_gws_test() {
 	    net_lobby_username(get_string("New username", choose("lucio", "livio", "tonio")));
 	}
 	py += increment;
-
 
 	if(text_pressed("net_lobby_password", 10, py, 1))
 	{
@@ -136,12 +134,7 @@ function gui_gws_test() {
 	}
 	py += increment;
 
-
-
-
-
 	///GAME MESSAGES
-
 	py = 0;
 	px = 400;
 	if(text_pressed("send chat", px, py, 1))
@@ -241,7 +234,7 @@ function gui_gws_test() {
 	if(text_pressed("send list", px, py, 1))
 	{
 	    log("send list");
-	    var list = ds_map_create();
+	    var list = ds_list_create();
 	    ds_list_add(list, "hey"); 
 	    ds_list_add(list, 16); 
 	    ds_list_add(list, 0.93); 

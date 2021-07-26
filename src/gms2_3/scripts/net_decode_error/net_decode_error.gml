@@ -37,6 +37,9 @@ function net_decode_error(error_id)
 	    case wsnet_error.callback_not_found:
 	        return "Callback not found";
                 
+	    case wsnet_error.no_error:
+	        return "No error";
+                
 	    default:
 	        return "Unknown error";
         

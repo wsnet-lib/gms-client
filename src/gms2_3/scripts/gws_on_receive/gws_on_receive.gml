@@ -105,7 +105,7 @@ function gws_on_receive(buffer)
 	            ds_list_clear(global.net_players);
 	            ds_map_clear(global.net_players_map);
 	            global.net_error_id = buffer_read(buffer, buffer_u8);
-	            global.net_events[wsnet_evt.lobby_leave](global.net_error_id != wsnet_error.no_error);            
+	            global.net_events[wsnet_evt.lobby_leave](global.net_error_id == wsnet_error.no_error);            
 	            break;
             
 	        case wsnet_cmd.lobby_player_left:
