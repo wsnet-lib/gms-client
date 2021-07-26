@@ -68,7 +68,6 @@ enum wsnet_type
     integer64
 }
 
-
 enum wsnet_error
 {
     no_error,
