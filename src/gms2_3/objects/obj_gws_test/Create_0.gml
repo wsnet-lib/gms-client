@@ -1,7 +1,7 @@
 messages = ds_list_create();
 
 
-net_connect("heroku-test-poll.herokuapp.com", 80, function(success){
+net_connect("localhost", 80, function(success){
 	
 	if(success)
 	{

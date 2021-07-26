@@ -11,6 +11,6 @@ draw_text(vx + vw/2, vy + vh/2, string_hash_to_newline("PRESS START"));
 draw_set_halign(fa_left);
 
 if(keyboard_check_pressed(vk_enter))
-    net_connect("asddaluseus2d.herokuapp.com", 80, on_accept);
+    net_connect("localhost", 80, on_accept);
 
 
