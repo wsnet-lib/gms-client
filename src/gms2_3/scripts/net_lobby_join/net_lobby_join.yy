@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "lobby",
-    "path": "folders/GWS/Scripts/lobby.yy",
+    "path": "folders/WSNet/Scripts/lobby.yy",
   },
   "resourceVersion": "1.0",
   "name": "net_lobby_join",

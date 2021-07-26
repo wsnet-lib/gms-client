@@ -1,10 +1,8 @@
 /// @description on_car_state(sender, array)
 /// @param sender
 /// @param  array
-function on_car_state(argument0, argument1) {
- 
-	var sender = argument0;
-	var state = argument1; 
+function on_car_state(sender, state) 
+{
 
 	with(obj_car_remote)
 	{
@@ -20,7 +18,4 @@ function on_car_state(argument0, argument1) {
 	        //image_angle = direction;
 	    }
 	}
-
-
-
 }

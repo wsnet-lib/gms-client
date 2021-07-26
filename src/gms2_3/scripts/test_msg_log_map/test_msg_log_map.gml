@@ -1,18 +1,15 @@
 /// @description test_msg_log_map(sender, map)
 /// @param sender
-/// @param  map
-function test_msg_log_map(argument0, argument1) {
-
-	var sender = global.net_players_map[? argument0];
+/// @param map
+function test_msg_log_map(sender, map)
+{
+	var player = global.net_players_map[? sender];
 	var str = "";
-	var key = ds_map_find_first(argument1);
-	for(var i = 0; i < ds_map_size(argument1); i++)
+	var key = ds_map_find_first(map);
+	for(var i = 0; i < ds_map_size(map); i++)
 	{
-	    str += string(key) + ": " + string(argument1[? key]) + ", ";
-	    key = ds_map_find_next(argument1, key);
+	    str += string(key) + ": " + string(map[? key]) + ", ";
+	    key = ds_map_find_next(map, key);
 	}
-	ds_list_add(obj_gws_test.messages, "[" + string(sender[1]) + "]: " + str)
-
-
-
+	ds_list_add(obj_gws_test.messages, "[" + string(player[1]) + "]: " + str)
 }

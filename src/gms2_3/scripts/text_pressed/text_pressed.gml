@@ -3,14 +3,10 @@
 /// @param  x
 /// @param  y
 /// @param  scale
-function text_pressed(argument0, argument1, argument2, argument3) {
+function text_pressed(text, px, py, scale) {
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
 	var ret = false;
-	var text = argument0
-	var px = argument1;
-	var py = argument2;
-	var scale = argument3; 
 	var padding = 2;
 	var w = (string_width(string_hash_to_newline(text))+padding * 2) * scale;
 	var h = (string_height(string_hash_to_newline(text)) + padding * 2 - 2) * scale;
@@ -19,8 +15,8 @@ function text_pressed(argument0, argument1, argument2, argument3) {
     
 	    var mx=mouse_x//device_mouse_x_to_gui(i);
 	    var my=mouse_y//device_mouse_y_to_gui(i);
-	    if(mx>min(px,px+w) && my>min(py,py+h)
-	      && mx<max(px,px+w) && my<max(py,py+h))
+	    if(mx > min(px, px + w) && my > min(py, py + h)
+	      && mx < max(px, px + w) && my < max(py, py + h))
 	    {
 	        highlight = 1;
 	        if(mouse_check_button_pressed(mb_left))
@@ -54,7 +50,4 @@ function text_pressed(argument0, argument1, argument2, argument3) {
 	draw_set_valign(fa_top); 
  
 	return ret;
-
-
-
 }

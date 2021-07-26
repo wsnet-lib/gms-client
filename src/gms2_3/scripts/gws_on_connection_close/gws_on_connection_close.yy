@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "events",
-    "path": "folders/GWS/Scripts/internal/websocket/events.yy",
+    "path": "folders/WSNet/Scripts/internal/websocket/events.yy",
   },
   "resourceVersion": "1.0",
   "name": "gws_on_connection_close",
