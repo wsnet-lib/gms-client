@@ -7,26 +7,29 @@ function gui_gws_test()
 	for(var i = 0; i < sz; i++)
 	{
 	    var p = global.net_players[| i];
-	    draw_text(140, i * 12, string_hash_to_newline(string(p)));
+	    draw_text(140, i * 12, (string(p)));
 	}
 	var sz = ds_list_size(global.net_lobbies);
 	for(var i = 0; i < sz; i++)
 	{
 	    var l = global.net_lobbies[| i];
-	    draw_text(200, i * 12, string_hash_to_newline(string(l)));
+	    draw_text(200, i * 12, (string(l)));
 	}
 
-	draw_text(300, 0, string_hash_to_newline("Player name: " + string(global.net_player_name)));
-	draw_text(300, 10, string_hash_to_newline("Player id: " + string(global.net_player_id)));
-	draw_text(300, 20, string_hash_to_newline("Admin id: " + string(global.net_admin_id)));
-	draw_text(300, 30, string_hash_to_newline("Lobby id: " + string(global.net_lobby_id))); 
-	draw_text(300, 40, string_hash_to_newline("Admin: " + string(global.net_player_id == global.net_admin_id))); 
+	var px = 230;
+	draw_text(px, 20, ("username: " + string(global.net_player_name)));
+	draw_text(px, 30, ("Player id: " + string(global.net_player_id)));
+	draw_text(px, 40, ("Admin id: " + string(global.net_admin_id)));
+	draw_text(px, 50,("Lobby id: " + string(global.net_lobby_id))); 
+	draw_text(px, 60, ("Admin: " + string(global.net_player_id == global.net_admin_id))); 
 
 	var sz = ds_list_size(messages);
 	var start = max(0, sz - 10);
 	var n = 0;
+	if(sz > 0)
+		draw_text(px, 80, "MESSAGES:");
 	for(var i = start; i < sz; i++)
-	    draw_text(250, 100 + (n++) * 10, string_hash_to_newline(messages[| i]));
+	    draw_text(px, 100 + (n++) * 10, (messages[| i]));
 
 	var increment = 20;
 	var px = 0, py = 0;

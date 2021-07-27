@@ -5,7 +5,7 @@ net_connect("wsnet-test.herokuapp.com", 80, function(success){
 	
 	if(success)
 	{
-
+		draw_set_font(gws_font_test);
 
 		enum msg_test
 		{
@@ -18,7 +18,7 @@ net_connect("wsnet-test.herokuapp.com", 80, function(success){
 		net_on(msg_test.chat, test_msg_log); 
 		net_on(msg_test.buffer, test_msg_log_buffer);
 		net_on(msg_test.dsmap, test_msg_log_map); 
-		net_on(msg_test.dslist, test_msg_log_map); 
+		net_on(msg_test.dslist, test_msg_log_list); 
 	
 	
 		net_event(wsnet_evt.connection_close, function()
