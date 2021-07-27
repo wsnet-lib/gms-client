@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Test",
-    "path": "folders/Test.yy",
+    "name": "Objects",
+    "path": "folders/Test/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_gws_test",

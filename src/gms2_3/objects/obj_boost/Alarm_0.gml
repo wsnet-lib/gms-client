@@ -1,2 +1,0 @@
-charged = true;
-

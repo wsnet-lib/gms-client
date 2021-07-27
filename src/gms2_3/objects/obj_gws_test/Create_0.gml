@@ -1,12 +1,11 @@
 messages = ds_list_create();
 
 
-net_connect("localhost", 80, function(success){
+net_connect("wsnet-test.herokuapp.com", 80, function(success){
 	
 	if(success)
 	{
 
-		draw_set_font(fnt_pixel);
 
 		enum msg_test
 		{
