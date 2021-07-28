@@ -1,8 +1,6 @@
 messages = ds_list_create();
  
-//ohio: wsnet.us-east-2.elasticbeanstalk.com
-//milano:
-net_connect("wsnet-env.eba-bm26fzif.eu-south-1.elasticbeanstalk.com", 80, function(success){
+net_connect("localhost", 80, function(success){
 	
 	if(success)
 	{
