@@ -1,7 +1,8 @@
 messages = ds_list_create();
-
-
-net_connect("wsnet-test.herokuapp.com", 80, function(success){
+ 
+//ohio: wsnet.us-east-2.elasticbeanstalk.com
+//milano:
+net_connect("wsnet-env.eba-bm26fzif.eu-south-1.elasticbeanstalk.com", 80, function(success){
 	
 	if(success)
 	{
@@ -13,12 +14,14 @@ net_connect("wsnet-test.herokuapp.com", 80, function(success){
 		    chat,
 		    dsmap,
 		    dslist,
+			time,
 		}
 
 		net_on(msg_test.chat, test_msg_log); 
 		net_on(msg_test.buffer, test_msg_log_buffer);
 		net_on(msg_test.dsmap, test_msg_log_map); 
 		net_on(msg_test.dslist, test_msg_log_list); 
+		net_on(msg_test.time, test_msg_time); 
 	
 	
 		net_event(wsnet_evt.connection_close, function()

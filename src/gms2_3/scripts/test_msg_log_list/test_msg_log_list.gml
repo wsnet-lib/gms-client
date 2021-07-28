@@ -1,6 +1,6 @@
 /// @description test_msg_log_list(sender, list)
 /// @param sender
-/// @param  list
+/// @param list
 function test_msg_log_list(sender, list) {
 
 	var player = global.net_players_map[? sender];

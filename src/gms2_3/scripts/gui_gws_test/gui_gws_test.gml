@@ -257,5 +257,12 @@ function gui_gws_test()
 	py += increment;
 
 
+	if(text_pressed("ping test", px, py, 1))
+	{
+	    log("net_send_ping");  
+	    net_send_number(msg_test.time, 0, current_time);
+	}
+	py += increment;
+
 
 }
