@@ -17,7 +17,9 @@ function net_send_map(msg_id, to, map)
     
 	    buffer_write(buffer, buffer_u8, wsnet_type.map);
     
-	    var len = ds_map_size(map);
+	    var len = ds_map_size(map); 
+	    buffer_write(buffer, buffer_u16, len); 
+		
 	    var key = ds_map_find_first(map);
 	    for(var i = 0; i < len; i++)
 	    {

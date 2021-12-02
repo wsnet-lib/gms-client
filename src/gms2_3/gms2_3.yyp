@@ -4,6 +4,7 @@
     {"id":{"name":"net_on","path":"scripts/net_on/net_on.yy",},"order":3,},
     {"id":{"name":"net_send","path":"scripts/net_send/net_send.yy",},"order":4,},
     {"id":{"name":"net_send_array","path":"scripts/net_send_array/net_send_array.yy",},"order":5,},
+    {"id":{"name":"dual_start","path":"scripts/dual_start/dual_start.yy",},"order":1,},
     {"id":{"name":"net_send_byte","path":"scripts/net_send_byte/net_send_byte.yy",},"order":6,},
     {"id":{"name":"net_send_byte_array","path":"scripts/net_send_byte_array/net_send_byte_array.yy",},"order":7,},
     {"id":{"name":"net_send_list","path":"scripts/net_send_list/net_send_list.yy",},"order":8,},
@@ -51,6 +52,7 @@
     {"id":{"name":"text_pressed","path":"scripts/text_pressed/text_pressed.yy",},"order":4,},
     {"id":{"name":"obj_wsnet","path":"objects/obj_wsnet/obj_wsnet.yy",},"order":0,},
     {"id":{"name":"obj_websocket","path":"objects/obj_websocket/obj_websocket.yy",},"order":1,},
+    {"id":{"name":"WinDev","path":"extensions/WinDev/WinDev.yy",},"order":0,},
     {"id":{"name":"gws_font_test","path":"fonts/gws_font_test/gws_font_test.yy",},"order":0,},
     {"id":{"name":"obj_gws_test","path":"objects/obj_gws_test/obj_gws_test.yy",},"order":0,},
   ],
@@ -97,6 +99,7 @@
     {"folderPath":"folders/Test/Objects.yy","order":2,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Test/Rooms.yy","order":3,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Test/Fonts.yy","order":0,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Extensions.yy","order":2,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

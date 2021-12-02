@@ -123,8 +123,7 @@ function net_internal_handle_game_message(buffer, buffer_size)
 	        var a = ds_map_create();
 	        for(var i = 0; i < len; i++) 
 	        {
-	            var key = buffer_read(buffer, buffer_string);
-            
+	            var key = buffer_read(buffer, buffer_string); 
 	            var t = buffer_read(buffer, buffer_u8);
 	            if(t == wsnet_type.number)
 	                ds_map_add(a, key, buffer_read(buffer, buffer_f64));

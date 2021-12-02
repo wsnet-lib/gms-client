@@ -1,7 +1,9 @@
 messages = ds_list_create();
 
+dual_start();
 
-net_connect("localhost", 80, function(success){
+
+net_connect("wsnet-test.herokuapp.com", 80, function(success){
 	
 	if(success)
 	{
