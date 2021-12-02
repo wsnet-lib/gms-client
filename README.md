@@ -19,4 +19,4 @@ WSNET adds support for multiplayer games through the [WebSocket technology](http
 
 ### Documentation
 
-https://wsnet-lib.github.io/gms-client
+https://wsnet-lib.github.io/
