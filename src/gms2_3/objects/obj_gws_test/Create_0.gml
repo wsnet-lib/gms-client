@@ -1,5 +1,6 @@
 messages = ds_list_create();
- 
+
+
 net_connect("localhost", 80, function(success){
 	
 	if(success)
