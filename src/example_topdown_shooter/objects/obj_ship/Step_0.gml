@@ -1,4 +1,4 @@
-
+///@desc ship movements
 //control this ship only if it's me
 if(player_id != global.net_player_id)
 	exit;
@@ -20,8 +20,6 @@ if(keyboard_check(vk_right)){
 	image_angle -= rot_speed;
 	direction = image_angle;
 }
-
-
 
 speed = speed * 0.99
 

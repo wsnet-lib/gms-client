@@ -8,7 +8,7 @@ else
 	draw_text(10, 10, "You are a client");
 }
 		
-//leave game
+//leave game when you press ESC
 if(keyboard_check_pressed(vk_escape))
 {
 	net_lobby_leave();
