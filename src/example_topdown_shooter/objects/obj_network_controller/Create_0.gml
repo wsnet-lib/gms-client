@@ -1,8 +1,7 @@
-var url = "wsnet-test.herokuapp.com";
-url = "localhost"
+var url = "wsnet-test.herokuapp.com"; 
 dual_start();
 
-net_connect(url, 7777, function(success) {
+net_connect(url, 80, function(success) {
 	
 	if(success)
 	{
