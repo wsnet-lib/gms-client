@@ -31,6 +31,7 @@ if(global.net_lobby_id < 0)
 else 
 {
  
+	draw_text(10, 50, "id " + string(global.net_player_id));
 	//if i'm admin
 	if(global.net_admin_id == global.net_player_id)
 	{
