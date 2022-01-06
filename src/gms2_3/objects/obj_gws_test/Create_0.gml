@@ -23,7 +23,7 @@ net_connect(url, 80, function(success){
 	}
 	else
 	{
-	    show_message("Impossible to connect to " + string(url));
+	    show_message("Unable to connect to " + string(url));
 		game_end();
 		exit;
 	}

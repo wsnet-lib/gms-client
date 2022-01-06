@@ -110,7 +110,11 @@ function gws_on_receive(buffer)
             
 	        case wsnet_cmd.lobby_player_left:
 	            var player_id = buffer_read(buffer, buffer_u8);
+				var last_admin_id = global.net_admin_id;
 	            global.net_admin_id = buffer_read(buffer, buffer_u8);
+				if(last_admin_id != global.net_admin_id) 
+					global.net_events[wsnet_evt.lobby_transfer](true, global.net_admin_id); 
+				
 	            var player = ds_map_find_value(global.net_players_map, player_id);
 	            if(player != undefined)
 	            {
